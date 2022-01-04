@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import cardsSrc from '../assets/cardsDB';
 import Card from './Card';
 import './Round.css';
@@ -21,14 +21,6 @@ export default function Round({ score, setScore }) {
         }
         return null;
     })
-
-    const addOne = useCallback(() => {
-        setScore((currentScore) => currentScore += 1);
-    }, [setScore])
-
-    const removeOne = useCallback(() => {
-        setScore((currentScore) => currentScore -= 1);
-    }, [setScore])
 
     useEffect(() => {
         const playAgain = document.querySelector('.play-again');
@@ -65,18 +57,18 @@ export default function Round({ score, setScore }) {
                     if (score === 0) {
                         setScore(0);
                     } else {
-                        removeOne();
+                        setScore(score -= 1);
                     }
                 } else {
                     setWinCondition('you win');
                     setWon('round-winner');
-                    addOne();
+                    setScore(score += 1);
                 }
             } else if (user === 'paper') {
                 if (house === 'rock') {
                     setWinCondition('you win');
                     setWon('round-winner');
-                    addOne();
+                    setScore(score += 1);
                 } else if (house === 'paper') {
                     setWinCondition('tie');
                 } else {
@@ -85,7 +77,7 @@ export default function Round({ score, setScore }) {
                     if (score === 0) {
                         setScore(0);
                     } else {
-                        removeOne();
+                        setScore(score -= 1);
                     }
                 }
             } else {
@@ -95,12 +87,12 @@ export default function Round({ score, setScore }) {
                     if (score === 0) {
                         setScore(0);
                     } else {
-                        removeOne();
+                        setScore(score -= 1);
                     }
                 } else if (house === 'paper') {
                     setWinCondition('you win');
                     setWon('round-winner');
-                    addOne();
+                    setScore(score += 1);
                 } else {
                     setWinCondition('tie');
                 }
@@ -112,7 +104,7 @@ export default function Round({ score, setScore }) {
             playAgain.style.display = 'flex';
         }, 500)
 
-    }, [addOne, removeOne, score, setScore, userChoice.name])
+    }, [])
 
     return (
         <div className='round-container'>
@@ -132,6 +124,7 @@ export default function Round({ score, setScore }) {
                     <button>Play Again</button>
                 </Link>
             </div>
+
         </div>
     )
 }
