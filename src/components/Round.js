@@ -24,11 +24,11 @@ export default function Round({ score, setScore }) {
 
     const addOne = useCallback(() => {
         setScore((currentScore) => currentScore += 1);
-    }, [])
+    }, [setScore])
 
     const removeOne = useCallback(() => {
         setScore((currentScore) => currentScore -= 1);
-    }, [])
+    }, [setScore])
 
     useEffect(() => {
         const playAgain = document.querySelector('.play-again');
