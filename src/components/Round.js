@@ -17,6 +17,7 @@ export default function Round({ score, setScore }) {
     cardsSrc.filter((card) => {
         if (card.name === name) {
             userChoice = card;
+            return userChoice;
         }
         return;
     })

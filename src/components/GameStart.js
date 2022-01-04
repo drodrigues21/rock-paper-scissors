@@ -11,7 +11,7 @@ export default function GameStart() {
         <>
             {cardsSrc && <div className="game-start">
                 <div className="triangle-container">
-                    <img src={triangle} />
+                    <img src={triangle} alt='' />
                 </div>
                 <div className="card-container card-top">
                     <Link to={`/round/paper`} className="card-hover">
