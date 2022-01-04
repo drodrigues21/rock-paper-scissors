@@ -24,11 +24,11 @@ export default function Round({ score, setScore }) {
 
     const addOne = useCallback(() => {
         setScore((currentScore) => currentScore += 1);
-    })
+    }, [])
 
     const removeOne = useCallback(() => {
         setScore((currentScore) => currentScore -= 1);
-    })
+    }, [])
 
     useEffect(() => {
         const playAgain = document.querySelector('.play-again');
@@ -112,7 +112,7 @@ export default function Round({ score, setScore }) {
             playAgain.style.display = 'flex';
         }, 500)
 
-    }, [])
+    }, [addOne, removeOne, score, setScore, userChoice.name])
 
     return (
         <div className='round-container'>
@@ -132,7 +132,6 @@ export default function Round({ score, setScore }) {
                     <button>Play Again</button>
                 </Link>
             </div>
-
         </div>
     )
 }
