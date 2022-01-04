@@ -1,17 +1,12 @@
 .game-container {
-    /* border: 2px solid salmon; */
-    height: 37vh;
-    margin: 75px 0 100px 0;
-    /* margin-top: 105px;
-    margin-bottom: 130px; */
-
+    margin-top: 105px;
+    margin-bottom: 140px;
 }
-
 
 @media screen and (min-width: 850px) {
     .game-container {
-        height: 48vh;
+        /* height: 48vh; */
         margin-top: 64px;
-        margin-bottom: 80px;
+        margin-bottom: 30px;
     }
 }
