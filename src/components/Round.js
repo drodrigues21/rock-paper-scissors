@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import cardsSrc from '../assets/cardsDB';
 import Card from './Card';
 import './Round.css';
@@ -19,7 +19,15 @@ export default function Round({ score, setScore }) {
             userChoice = card;
             return userChoice;
         }
-        return;
+        return null;
+    })
+
+    const addOne = useCallback(() => {
+        setScore((currentScore) => currentScore += 1);
+    })
+
+    const removeOne = useCallback(() => {
+        setScore((currentScore) => currentScore -= 1);
     })
 
     useEffect(() => {
@@ -57,18 +65,18 @@ export default function Round({ score, setScore }) {
                     if (score === 0) {
                         setScore(0);
                     } else {
-                        setScore(score -= 1);
+                        removeOne();
                     }
                 } else {
                     setWinCondition('you win');
                     setWon('round-winner');
-                    setScore(score += 1);
+                    addOne();
                 }
             } else if (user === 'paper') {
                 if (house === 'rock') {
                     setWinCondition('you win');
                     setWon('round-winner');
-                    setScore(score += 1);
+                    addOne();
                 } else if (house === 'paper') {
                     setWinCondition('tie');
                 } else {
@@ -77,7 +85,7 @@ export default function Round({ score, setScore }) {
                     if (score === 0) {
                         setScore(0);
                     } else {
-                        setScore(score -= 1);
+                        removeOne();
                     }
                 }
             } else {
@@ -87,12 +95,12 @@ export default function Round({ score, setScore }) {
                     if (score === 0) {
                         setScore(0);
                     } else {
-                        setScore(score -= 1);
+                        removeOne();
                     }
                 } else if (house === 'paper') {
                     setWinCondition('you win');
                     setWon('round-winner');
-                    setScore(score += 1);
+                    addOne();
                 } else {
                     setWinCondition('tie');
                 }
