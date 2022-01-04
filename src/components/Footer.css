@@ -1,0 +1,23 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 0 0 30px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.attribution a {
+    text-decoration: none;
+    font-weight: 700;
+    color: hsl(228, 60%, 74%);
+}
+
+/* Desktop */
+@media screen and (min-width: 850px) {
+    .attribution {
+        font-size: 12px;
+        margin-top: 150px;
+    }
+}

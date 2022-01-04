@@ -1,0 +1,32 @@
+.game-start {
+    position: relative;
+    max-width: 315px;
+    margin: 0 auto;
+}
+
+.triangle-container {
+    position: absolute;
+    top: 70px;
+    left: 55px;
+    z-index: -10;
+}
+
+.triangle-container img {
+    width: 80%;
+}
+
+/* Desktop */
+@media screen and (min-width: 850px) {
+    .game-start {
+        max-width: 476px;
+    }
+
+    .triangle-container {
+        top: 100px;
+        left: 102px; 
+    }
+    
+    .triangle-container img {
+        width: 90%;
+    }
+}
