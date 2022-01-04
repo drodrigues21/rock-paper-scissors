@@ -1,9 +1,9 @@
 .game-container {
     /* border: 2px solid salmon; */
     height: 37vh;
-    margin: 0;
-    margin-top: 105px;
-    margin-bottom: 130px;
+    margin: 75px 0 100px 0;
+    /* margin-top: 105px;
+    margin-bottom: 130px; */
 
 }
 
