@@ -1,4 +1,5 @@
-# Frontend Mentor - Rock, Paper, Scissors
+See the project here: https://rockpaperscissor-react.netlify.app/
+
 
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
